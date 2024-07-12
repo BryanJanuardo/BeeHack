@@ -45,6 +45,7 @@ class TukangController extends Controller
     }
 
     public function register(Request $request){
+
         $validate = $request->validate([
             'Nama' => 'required|string|min:5|max:30',
             'Umur' => 'required|integer',
@@ -69,8 +70,8 @@ class TukangController extends Controller
         if ($request->hasFile('CV')) {
             $extension = $request->file('CV')->getClientOriginalExtension();
             $CVTukang = $validate['Nama'] . '_CV' . '.' . $extension;
-            $request->file('CV')->storeAs('public/Tukang/CV', $CVTukang);
             $CV_path = $CVTukang;
+            $request->file('CV')->storeAs('public/Tukang/CV', $CVTukang);
         }
 
         if ($request->hasFile('Photo')) {

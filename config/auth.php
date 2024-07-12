@@ -50,6 +50,11 @@ return [
             'driver' => 'session',
             'provider' => 'tukangs',
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ]
     ],
 
     /*
@@ -83,6 +88,11 @@ return [
         'tukangs' => [
             'driver' => 'eloquent',
             'model' => \App\Models\Tukang::class,
+        ],
+
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Admin::class,
         ],
 
         // 'users' => [
