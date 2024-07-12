@@ -40,6 +40,16 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'customer' => [
+            'driver' => 'session',
+            'provider' => 'customers',
+        ],
+
+        'tukang' => [
+            'driver' => 'session',
+            'provider' => 'tukangs',
+        ],
     ],
 
     /*
@@ -63,6 +73,16 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'customers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Customer::class,
+        ],
+
+        'tukangs' => [
+            'driver' => 'eloquent',
+            'model' => \App\Models\Tukang::class,
         ],
 
         // 'users' => [
