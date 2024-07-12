@@ -27,13 +27,16 @@
             <h2 class="text-center text-3xl text-[#99E1D9] font-bold">Admin Login</h2>
             <div class="">
                 <input name="Email" placeholder="Email" type="email" class="w-full my-4 p-3" required />
+                @error('Email')
+                    {{$message}}
+                @enderror
                 <input name="Password" placeholder="Password" type="password" class="w-full mb-5 p-3" required />
+                @error('Email')
+                    {{$message}}
+                @enderror
             </div>
-            <a href="{{route('tukang.register.index')}}" class="underline text-[#F0F7F4] block text-center">Forgot Password</a>
             <button type="submit"
                 class="text-lg font-bold my-2 block mx-auto text-center w-44 px-5 py-2 bg-[#99E1D9] rounded rounded-xl">Login</button>
-            <span class="text-[#F0F7F4] block text-center">Don't have account?<a href=""
-                    class="underline">Register</a></span>
             <div class="flex">
                 <a href="{{route('customer.login.index')}}"
                 class="font-semibold mt-2 mx-1 text-center w-40 px-1 py-1 bg-[#99E1D9] rounded rounded-xl">Login as Customer</a>

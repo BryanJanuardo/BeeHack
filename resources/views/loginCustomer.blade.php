@@ -27,7 +27,13 @@
             <h2 class="text-center text-3xl text-[#99E1D9] font-bold">Customer Login</h2>
             <div class="">
                 <input name="Email" placeholder="Email" type="email" class="w-full my-4 p-3" required />
+                @error('Email')
+                    {{$message}}
+                @enderror
                 <input name="Password" placeholder="Password" type="password" class="w-full mb-5 p-3" required />
+                @error('Password')
+                    {{$message}}
+                @enderror
             </div>
             <a href="{{route('customer.register.index')}}" class="underline text-[#F0F7F4] block text-center">Forgot Password</a>
             <button type="submit"

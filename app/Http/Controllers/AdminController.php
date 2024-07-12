@@ -19,22 +19,19 @@ class AdminController extends Controller
             'Password' => 'required|string|min:8|max:30',
         ]);
 
-        dd('dawdwa');
         $credentials = [
             'Email' => $validate['Email'],
-            'Password' => Hash::make($validate['Password']),
+            'Password' => $validate['Password'],
         ];
 
-
-        if(Auth::guard('admin')->attempt(['Email' => $credentials['Email'], 'Password' => $credentials['Password']])){
-            $admin = Admin::where('Email', $credentials['Email'])->first();
-            Auth::login($admin);
+        $admin = Admin::where('Email', $credentials['Email'])->first();
+        if($admin && Hash::check($credentials['Password'], $admin->Password)){
+            Auth::guard('admin')->login($admin);
             $request->session()->put('guard', 'admin');
-
             return redirect()->route('admin.dashboard.index');
         }
 
 
-        return redirect()->route('tukang.login.index');
+        return redirect()->route('admin.login.index');
     }
 }

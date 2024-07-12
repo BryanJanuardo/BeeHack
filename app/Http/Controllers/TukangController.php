@@ -30,12 +30,12 @@ class TukangController extends Controller
 
         $credentials = [
             'Email' => $validate['Email'],
-            'Password' => Hash::make($validate['Password']),
+            'Password' => $validate['Password'],
         ];
 
-        if(Auth::guard('tukang')->attempt(['Email' => $credentials['Email'], 'Password' => $credentials['Password']])){
-            $tukang = Tukang::where('Email', $credentials['Email'])->first();
-            Auth::login($tukang);
+        $tukang = Tukang::where('Email', $credentials['Email'])->first();
+        if($tukang && Hash::check($credentials['Password'], $tukang->Password)){
+            Auth::guard('tukang')->login($tukang);
             $request->session()->put('guard', 'tukang');
 
             return redirect()->route('tukang.dashboard.index');

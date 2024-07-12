@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Admin;
 use App\Models\Customer;
 use App\Models\Tukang;
 use Illuminate\Support\Facades\Auth;
@@ -23,16 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::define('customer', function(Customer $customer) {
-            return Auth::guard('customer')->check();
-        });
-
-        Gate::define('tukang', function(Tukang $tukang){
-            return Auth::guard('tukang')->check();
-        });
-
-        Gate::define('admin', function(Tukang $tukang){
-            return Auth::guard('admin')->check();
-        });
+        
     }
 }

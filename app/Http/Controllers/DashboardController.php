@@ -22,18 +22,18 @@ class DashboardController extends Controller
     public function logoutCustomer(Request $request){
         Auth::guard('customer')->logout();
         $request->session()->forget('guard');
-        return redirect()->route('customer.login');
+        return redirect()->route('customer.login.index');
     }
 
     public function logoutTukang(Request $request){
         Auth::guard('tukang')->logout();
         $request->session()->forget('guard');
-        return redirect()->route('tukang.login');
+        return redirect()->route('tukang.login.index');
     }
 
     public function logoutAdmin(Request $request){
         Auth::guard('admin')->logout();
         $request->session()->forget('guard');
-        return redirect()->route('admin.login');
+        return redirect()->route('admin.login.index');
     }
 }
