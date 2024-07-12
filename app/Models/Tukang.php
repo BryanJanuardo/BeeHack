@@ -16,9 +16,13 @@ class Tukang extends Model
         'Email',
         'Gender',
         'NomorTelepon',
-        'Address',
+        'Alamat',
         'CV_path',
         'Photo_path',
-        'Description',
+        'Deskripsi',
     ];
+
+    public function CustomerService() {
+        return $this->hasMany(TrCustomerService::class, 'TukangID', 'TukangID');
+    }
 }

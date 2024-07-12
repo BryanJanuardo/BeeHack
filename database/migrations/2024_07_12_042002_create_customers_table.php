@@ -11,17 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tukang', function (Blueprint $table) {
-            $table->id('TukangID')->unique();
+        Schema::create('customer', function (Blueprint $table) {
+            $table->id('CustomerID')->unique();
             $table->string('Nama');
-            $table->integer('Umur');
             $table->string('Email')->unique();
-            $table->string('Gender');
+            $table->integer('Umur');
             $table->string('NomorTelepon');
-            $table->string('Alamat');
-            $table->string('CV_path')->nullable();
+            $table->string('Gender');
             $table->string('Photo_path')->nullable();
-            $table->text('Deskripsi')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tukang');
+        Schema::dropIfExists('customer');
     }
 };
