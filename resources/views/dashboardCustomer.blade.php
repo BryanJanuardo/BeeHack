@@ -33,6 +33,8 @@
         </div>
     </div>
 
+    
+
     <div href="" class="flex flex-col justify-center items-center w-full min-h-screen">
         <div class="w-5/6 min-h-screen my-10">
             <p class="text-2xl font-bold mb-7">Welcome User - Ucup!</p>

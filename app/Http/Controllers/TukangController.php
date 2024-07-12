@@ -124,7 +124,7 @@ class TukangController extends Controller
             ]);
         }
 
-        // Return redirect ke Admin Home
+        return redirect()->route('admin.dashboard.index');
 
     }
 }
