@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tukang extends Model
+class TukangProposal extends Model
 {
     use HasFactory;
-    protected $table = "Tukang";
+
+    protected $table = "tukang_proposal";
     protected $primaryKey = "TukangID";
     protected $fillable = [
         'Nama',
@@ -21,9 +22,6 @@ class Tukang extends Model
         'CV_path',
         'Photo_path',
         'Deskripsi',
+        'Status',
     ];
-
-    public function CustomerService() {
-        return $this->hasMany(TrCustomerService::class, 'TukangID', 'TukangID');
-    }
 }

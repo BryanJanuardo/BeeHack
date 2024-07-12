@@ -22,13 +22,14 @@
 <body>
 
     <div class="h-screen w-full flex justify-center items-center bg-[#F0F7F4]">
-        <form class="w-96 bg-[#32292F] p-10">
+        <form action="{{route('customer.login.post')}}" method="POST" class="w-96 bg-[#32292F] p-10">
+            @csrf
             <h2 class="text-center text-3xl text-[#99E1D9] font-bold">Login</h2>
             <div class="">
-                <input placeholder="Email" type="email" class="w-full my-4 p-3" required />
-                <input placeholder="Password" type="password" class="w-full mb-5 p-3" required />
+                <input name="Email" placeholder="Email" type="email" class="w-full my-4 p-3" required />
+                <input name="Password" placeholder="Password" type="password" class="w-full mb-5 p-3" required />
             </div>
-            <a href="" class="underline text-[#F0F7F4] block text-center">Forgot Password</a>
+            <a href="{{route('customer.register.index')}}" class="underline text-[#F0F7F4] block text-center">Forgot Password</a>
             <button type="submit"
                 class="text-lg font-bold my-2 block mx-auto text-center w-44 px-5 py-2 bg-[#99E1D9] rounded rounded-xl">Login</button>
             <span class="text-[#F0F7F4] block text-center">Don't have account?<a href=""

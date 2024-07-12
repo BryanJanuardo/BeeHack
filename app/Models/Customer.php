@@ -14,9 +14,11 @@ class Customer extends Model
     protected $fillable = [
         'Nama',
         'Email',
+        'Password',
         'Umur',
         'NomorTelepon',
         'Gender',
+        'Alamat',
         'Photo_path'
     ];
 

@@ -21,8 +21,8 @@
 
 <body>
 
-    <div class="h-screen w-full flex justify-center items-center bg-[#F0F7F4]">
-        <form method="POST" action="{{ route('registertukang') }}" enctype="multipart/form-data" class="w-96 bg-[#32292F] p-10">
+    <div class="min-h-screen w-full flex justify-center items-center bg-[#F0F7F4]">
+        <form method="POST" action="{{ route('tukang.register.post') }}" enctype="multipart/form-data" class="w-96 bg-[#32292F] min-h-screen my-10 p-10">
             @csrf
             <h2 class="text-center text-3xl text-[#99E1D9] font-bold">Register Worker</h2>
             <div class="">
@@ -64,12 +64,40 @@
                             <span class="text-center text-red-500">{{ $message }}</span>
                         @enderror
 
+                        <input placeholder="Password" name="Password" type="text" class="w-full mt-4 p-3" required />
+                        @error('Password')
+                            <span class="text-center text-red-500">{{ $message }}</span>
+                        @enderror
+
+                        <input placeholder="ConfirmPassword" name="ConfirmPassword" type="text" class="w-full mt-4 p-3" required />
+                        @error('ConfirmPassword')
+                            <span class="text-center text-red-500">{{ $message }}</span>
+                        @enderror
+
                         <textarea placeholder="Description" name="Deskripsi" class="w-full mt-4 p-3" required></textarea>
                         @error('Deskripsi')
                             <span class="text-center text-red-500">{{ $message }}</span>
                         @enderror
 
+                        <div class="flex flex-col my-3 text-[#F0F7F4]">
+                            <label for="cv">Upload Your CV/Portfolio</label>
+                            <input name="CV" type="file" id="cv" accept=".pdf, .doc, .docx" required />
+                        </div>
+                        @error('CV')
+                            <span class="text-center text-red-500">{{ $message }}</span>
+                        @enderror
+
+                        <div class="flex flex-col my-3 text-[#F0F7F4]">
+                            <label for="photo">Upload Your Photo Picture</label>
+                            <input name="Photo" type="file" id="photo" accept=".png, .jpg, .jpeg, .svg" required />
+                        </div>
+                        @error('Photo')
+                            <span class="text-center text-red-500">{{ $message }}</span>
+                        @enderror
+
                     </div>
+                    <span class="text-center block text-white">Have Account? <a href="{{route('tukang.login.index')}}" class="underline">Sign In</a></span>
+
                     <button type="submit"
                     class="text-lg font-bold mt-5 my-2 block mx-auto text-center w-44 px-5 py-2 bg-[#99E1D9] rounded rounded-xl">Register</button>
             </div>
