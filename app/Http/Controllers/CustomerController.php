@@ -26,12 +26,12 @@ class CustomerController extends Controller
 
         $credentials = [
             'Email' => $validate['Email'],
-            'Password' => Hash::make($validate['Password']),
+            'Password' => $validate['Password'],
         ];
 
-        if(Auth::guard('customer')->attempt(['Email' => $credentials['Email'], 'Password' => $credentials['Password']])){
-            $customer = Customer::where('Email', $credentials['Email'])->first();
-            Auth::login($customer);
+        $customer = Customer::where('Email', $credentials['Email'])->first();
+        if($customer && Hash::check($credentials['Password'], $customer->Password)){
+            Auth::guard('customer')->login($customer);
             $request->session()->put('guard', 'customer');
 
             return redirect()->route('customer.dashboard.index');

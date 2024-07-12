@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tukang extends Model
+class Tukang extends Model implements AuthenticatableContract
 {
-    use HasFactory;
+    use HasFactory, Authenticatable;
     protected $table = "Tukang";
     protected $primaryKey = "TukangID";
     protected $fillable = [
