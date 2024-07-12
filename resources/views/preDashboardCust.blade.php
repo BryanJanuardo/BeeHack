@@ -37,52 +37,24 @@
 
     <div class="bg-[#F0F7F4] min-h-screen w-full flex justify-center items-center">
         <div class="min-h-screen w-5/6 bg-[#32292F] my-10">
-            <select id="fruit" class="block bg-[#F0F7F4] w-60 my-10 mx-auto px-5 py-3">
-                <option value="apple">apple</option>
-                <option value="banana">banana papoy</option>
-            </select>
-            <div class="bg-[#F0F7F4] w-5/6 mx-auto p-8">
-                <p class="text-3xl text-[#32292F] text-center">My Service List</p>
+            <form class="bg-[#F0F7F4] w-5/6 mx-auto mt-16 p-8">
+                <p class="text-3xl text-[#32292F] text-center">Service List</p>
                 <div class="flex flex-wrap justify-between p-4">
                     <div class="flex w-5/12 mb-5 justify-center items-center">
-                        <p>❌</p>
+                        <input type="checkbox" />
                         <p class="mx-4 text-lg">Electric Work</p>
                         <div class="">
                             <p class="text-sm">Rating | ⭐0.0</p>
                             <p class="text-sm">Price | 0 IDR</p>
                         </div>
                     </div>
+
+
                 </div>
-                <p class="text-3xl text-[#32292F] text-center">Add Service</p>
-                <form>
-                    <div class="flex mt-3 items-center">
-                        <p>Service: </p>
-                        <select id="fruit" class="mx-6">
-                            <option value="apple">Apple</option>
-                            <option value="banana">Banana</option>
-                        </select>
-                        <a href=""
-                            class=" font-semibold text-center  px-3 py-1 bg-[#99E1D9] rounded rounded-xl">Other
-                            Services</a>
-                    </div>
-                    <div class="mt-3">
-                        <label for="volunteer">Volunteer : </label>
-                        <input type="checkbox" id="volunteer" />
-                    </div>
 
-                    <div class="mt-3">
-                        <label for="price">Price : </label>
-                        <input type="number" id="price"
-                            class="border-b-2 border-black bg-transparent outline-none" />
-                        <br>
-                    </div>
-
-                    <button type="submit"
-                        class=" font-semibold text-center mt-3 px-3 py-1 bg-[#99E1D9] rounded rounded-xl">Add
-                        Service
-                    </button>
-                </form>
-            </div>
+                <button type="submit"
+                    class="text-lg font-bold mt-5 my-2 block mx-auto text-center w-36 px-3 py-2 bg-[#99E1D9] rounded rounded-xl">Submit</button>
+            </form>
 
         </div>
     </div>
