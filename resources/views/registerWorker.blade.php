@@ -22,7 +22,7 @@
 <body>
 
     <div class="h-screen w-full flex justify-center items-center bg-[#F0F7F4]">
-        <form method="POST" action="{{ route('tukang.register.post') }}" enctype="multipart/form-data" class="w-96 bg-[#32292F] p-10">
+        <form method="POST" action="{{ route('tukang.register.post') }}" enctype="multipart/form-data" class="w-96 bg-[#32292F] min-h-screen my-10 p-10">
             @csrf
             <h2 class="text-center text-3xl text-[#99E1D9] font-bold">Register Worker</h2>
             <div class="">
@@ -79,6 +79,10 @@
                             <span class="text-center text-red-500">{{ $message }}</span>
                         @enderror
 
+                        <div class="flex flex-col my-3 text-[#F0F7F4]">
+                            <label for="cv">Upload Your CV/Portfolio</label>
+                            <input type="file" id="cv" accept=".pdf, .doc, .docx" required />
+                        </div>
                     </div>
                     <span class="text-center block text-white">Have Account? <a href="{{route('tukang.login.index')}}" class="underline">Sign In</a></span>
 
