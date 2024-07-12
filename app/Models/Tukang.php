@@ -22,7 +22,7 @@ class Tukang extends Model
         'Description',
     ];
 
-    public function customerService() {
+    public function CustomerService() {
         return $this->hasMany(TrCustomerService::class, 'TukangID', 'TukangID');
     }
 }

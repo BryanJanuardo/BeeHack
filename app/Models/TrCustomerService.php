@@ -17,11 +17,11 @@ class TrCustomerService extends Model
         'Price',
     ];
 
-    public function tukang() {
+    public function Tukang() {
         return $this->hasMany(Tukang::class, 'TukangID', 'TukangID');
     }
 
-    public function serviceType() {
+    public function ServiceType() {
         return $this->hasMany(ServiceType::class, 'ServiceID', 'ServiceID');
     }
 }

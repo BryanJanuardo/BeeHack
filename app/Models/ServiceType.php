@@ -15,7 +15,7 @@ class ServiceType extends Model
         'DeskripsiService'
     ];
 
-    public function serviceType() {
+    public function ServiceType() {
         return $this->hasMany(TrCustomerService::class, 'ServiceID', 'ServiceID');
     }
 }
