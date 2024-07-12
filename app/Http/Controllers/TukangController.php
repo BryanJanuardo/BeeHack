@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class TukangController extends Controller
 {
+
+    public function index() {
+        $tukang = Tukang::all();
+        return view('dashboardtukang', compact('tukang'));
+    }
     public function store(Request $request){
         $validate = $request->validate([
             'Nama' => 'required|string',

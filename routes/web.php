@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TukangController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('dashboardTukang');
+    return view('welcome');
 });
+
+Route::get('/dashboard/customer', [TukangController::class, 'index'])->name('dashboard.customer');
+

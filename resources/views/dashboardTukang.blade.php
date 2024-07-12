@@ -37,7 +37,27 @@
 
     <div class="bg-[#F0F7F4] min-h-screen w-full flex justify-center items-center">
         <div class="min-h-screen w-5/6 bg-[#32292F] my-10">
-
+            <h1>Halo tukang</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tukang ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <!-- Add other columns as necessary -->
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($tukang as $t)
+                        <tr>
+                            <td>{{ $t->TukangID }}</td>
+                            <td>{{ $t->Nama }}</td>
+                            <td>{{ $t->Email }}</td>
+                            <!-- Add other data as necessary -->
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
     </div>
 
