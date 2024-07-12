@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('Gender');
             $table->string('NomorTelepon');
             $table->string('Address');
-            $table->string('CV_path');
-            $table->string('Photo_path');
-            $table->text('Description');
+            $table->string('CV_path')->nullable();
+            $table->string('Photo_path')->nullable();
+            $table->text('Description')->nullable();
             $table->timestamps();
         });
     }

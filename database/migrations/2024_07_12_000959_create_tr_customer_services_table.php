@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('tr_customer_service', function (Blueprint $table) {
             $table->id('CustomerServiceID')->unique();
-            $table->integer('TukangID');
-            $table->integer('ServiceID');
-            $table->string('DeskripsiCustomerService');
+            $table->foreignId('TukangID')->constrained('tukang')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('ServiceID')->constrained('service_type')->onDelete('cascade')->onUpdate('cascade');
+            $table->text('DeskripsiCustomerService');
             $table->integer('Price');
             $table->timestamps();
         });

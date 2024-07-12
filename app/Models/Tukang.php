@@ -21,4 +21,8 @@ class Tukang extends Model
         'Photo_path',
         'Description',
     ];
+
+    public function customerService() {
+        return $this->hasMany(TrCustomerService::class, 'TukangID', 'TukangID');
+    }
 }

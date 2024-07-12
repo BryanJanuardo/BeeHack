@@ -16,4 +16,12 @@ class TrCustomerService extends Model
         'DeskripsiCustomerService',
         'Price',
     ];
+
+    public function tukang() {
+        return $this->hasMany(Tukang::class, 'TukangID', 'TukangID');
+    }
+
+    public function serviceType() {
+        return $this->hasMany(ServiceType::class, 'ServiceID', 'ServiceID');
+    }
 }
