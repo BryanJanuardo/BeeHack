@@ -20,15 +20,9 @@
 
 <body>
     {{-- Navbar --}}
-    <div class="h-24 bg-[#32292F] w-full flex items-center justify-between px-8">
-        <div class="text-[#99E1D9] font-extrabold">
-            <a href="" class="text-2xl">CariTukang.com</a>
-        </div>
-        <div>
-            <a href="" class="text-xl text-[#99E1D9] font-semibold ml-8">Home</a>
-            <a href="" class="text-xl text-[#99E1D9] font-semibold ml-8">Account</a>
-        </div>
-    </div>
+    @extends('layout')
+
+    @section('Content')
 
     <div class="min-h-screen py-10 w-full bg-[#F0F7F4]">
         <div class=" mx-auto w-5/6">
@@ -89,21 +83,7 @@
     </div>
 
     {{-- Footer --}}
-    <div class="bg-[#32292F] text-[#F0F7F4] flex flex-col md:flex-row p-10 w-full">
-        <div class="w-full md:w-2/6 text-center md:text-start">
-            <p class="font-bold text-lg">Contact Us</p>
-            <p>✉️ CariTukang@gmail.com</p>
-            <p>📞 +62 123456789</p>
-        </div>
-        <div class="w-full md:w-2/6 my-5 md:my-0 text-center">
-            <h2 class="font-bold text-3xl text-[#99E1D9]">CariTukang.Com</h2>
-            <p>©CariTukang.com 2024. All Rights Reserved</p>
-        </div>
-        <div class="w-full md:w-2/6 text-center md:text-right">
-            <p class="font-bold text-lg">Reach out us at</p>
-            <p class="">Jl. Kebon Jeruk Raya No. 27, Kebon Jeruk Jakarta Barat 11530, Indonesia</p>
-        </div>
-    </div>
+    @endsection
 
 
 

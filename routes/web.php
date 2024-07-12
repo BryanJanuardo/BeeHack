@@ -71,9 +71,6 @@ Route::prefix('/tukang')->group(function (){
     });
 });
 
-
-
-
 Route::prefix('/admin')->group(function (){
     Route::prefix('/login')->group(function (){
         Route::get('/index', [AdminController::class, 'indexLogin'])->name('admin.login.index');
@@ -83,7 +80,7 @@ Route::prefix('/admin')->group(function (){
     Route::middleware('auth.admin')->group(function (){
         Route::prefix('/dashboard')->group(function (){
             Route::get('/index', [DashboardController::class, 'indexAdmin'])->name('admin.dashboard.index');
-            Route::post('/logout', [DashboardController::class, 'logoutAdmin'])->name('admin.dashboard.logout');
+            Route::get('/logout', [DashboardController::class, 'logoutAdmin'])->name('admin.dashboard.logout');
         });
     });
 });
