@@ -22,4 +22,8 @@ class TrOrderService extends Model
     public function Customer() {
         return $this->belongsTo(Customer::class, 'CustomerID', 'CustomerID');
     }
+
+    public function TrCustomerService() {
+        return $this->belongsTo(TrCustomerService::class, 'CustomerServiceID', 'CustomerServiceID');
+    }
 }

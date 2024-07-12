@@ -23,3 +23,6 @@ Route::get('/formregistertukang', function() {
 })->name('formregistertukang');
 
 Route::post('/registertukang', [TukangController::class, 'store'])->name('registertukang');
+
+Route::get('/dashboardcustomer', [TukangController::class, 'show']);
+

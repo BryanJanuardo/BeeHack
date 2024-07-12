@@ -24,4 +24,8 @@ class TrCustomerService extends Model
     public function ServiceType() {
         return $this->hasMany(ServiceType::class, 'ServiceID', 'ServiceID');
     }
+
+    public function TrOrderService() {
+        return $this->belongsTo(TrOrderService::class, 'CustomerServiceID', 'CustomerServiceID');
+    }
 }

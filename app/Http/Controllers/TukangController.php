@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Log;
 
 class TukangController extends Controller
 {
+    public function show() {
+        $tukang = Tukang::all();
+        return view('dashboardCust', compact('tukang'));
+    }
+
     public function store(Request $request){
 
         $validate = $request->validate([

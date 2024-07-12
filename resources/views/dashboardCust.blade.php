@@ -38,22 +38,26 @@
             <p class="text-2xl font-bold mb-7">Welcome User - Ucup!</p>
             <div class="w-full h-full justify-around flex flex-wrap">
                 {{-- cards --}}
+                @foreach ($tukang as $t)
                 <div
                     class=" w-full md:w-5/12 md:h-80 mb-8 bg-[#32292F] py-5 md:p-5 flex md:flex-row flex-col justify-center items-center">
                     <div class="w-5/6 md:w-2/6 flex justify-center">
                         <img src="../img/employee.jpeg" class="" />
                     </div>
                     <div class="w-5/6 md:w-4/6 text-[#F0F7F4] pl-5 flex flex-col justify-center">
-                        <p class="text-xl font-bold">James Nordan (20)</p>
-                        <p class="text-lg font-semibold mb-3">Jakarta Barat | Male</p>
-                        <p class="text-sm ">Painting and Decorating</p>
+                            
+                        {{-- <p class="text-xl font-bold">James Nordan (20)</p> --}}
+                        <p class="text-xl font-bold">{{  $t->Nama }}</p>
+                        <p class="text-lg font-semibold mb-3">{{ $t->Alamat }} | {{ $t->Gender }}</p>
+                        <p class="text-sm ">{{ $t->Deskripsi }}</p>
                         <p class="mb-2">Rating | ⭐8.9</p>
                         <p class="mb-3">Price | 500.000 - 1.000.000 IDR</p>
                         <a href=""
-                            class="text-md text-[#32292F] font-semibold w-32 m-auto px-3 py-1 bg-[#99E1D9] rounded">Detailed
-                            Info</a>
+                        class="text-md text-[#32292F] font-semibold w-32 m-auto px-3 py-1 bg-[#99E1D9] rounded">Detailed
+                        Info</a>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
