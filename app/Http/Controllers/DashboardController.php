@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ServiceTypeProposal;
+use App\Models\TukangProposal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +18,12 @@ class DashboardController extends Controller
     }
 
     public function indexAdmin(){
-        return view('dashboardAdmin');
+        $tukangApprovals = TukangProposal::all();
+        $serviceTypesApprovals = ServiceTypeProposal::all();
+        return view('dashboardAdmin')->with([
+            'ProposalTukangs' => $tukangApprovals,
+            'ProposalServiceTypes' => $serviceTypesApprovals
+        ]);
     }
 
     public function logoutCustomer(Request $request){

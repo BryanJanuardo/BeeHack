@@ -4,6 +4,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\TukangController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ServiceTypeController;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -27,9 +28,6 @@ Route::get('/test', function() {
     return view('registerWorker');
 });
 
-
-
-
 Route::prefix('/customer')->group(function (){
     Route::prefix('/register')->group(function (){
         Route::get('/index', [CustomerController::class, 'indexRegister'])->name('customer.register.index');
@@ -44,12 +42,10 @@ Route::prefix('/customer')->group(function (){
         Route::prefix('/dashboard')->group(function (){
             Route::get('/index', [DashboardController::class, 'indexCustomer'])->name('customer.dashboard.index');
             Route::post('/index/filter', [DashboardController::class, 'filterIndexCustomer'])->name('customer.dashboard.index.filter');
-            Route::post('/logout', [DashboardController::class, 'logoutCustomer'])->name('customer.dashboard.logout');
+            Route::get('/logout', [DashboardController::class, 'logoutCustomer'])->name('customer.dashboard.logout');
         });
     });
 });
-
-
 
 Route::prefix('/tukang')->group(function (){
     Route::prefix('/register')->group(function (){
@@ -66,7 +62,7 @@ Route::prefix('/tukang')->group(function (){
         Route::prefix('/dashboard')->group(function (){
             Route::get('/index', [DashboardController::class, 'indexTukang'])->name('tukang.dashboard.index');
             Route::post('/index/filter', [DashboardController::class, 'filterIndexTukang'])->name('tukang.dashboard.index.filter');
-            Route::post('/logout', [DashboardController::class, 'logoutTukang'])->name('tukang.dashboard.logout');
+            Route::get('/logout', [DashboardController::class, 'logoutTukang'])->name('tukang.dashboard.logout');
         });
     });
 });
@@ -82,6 +78,8 @@ Route::prefix('/admin')->group(function (){
             Route::get('/index', [DashboardController::class, 'indexAdmin'])->name('admin.dashboard.index');
             Route::get('/logout', [DashboardController::class, 'logoutAdmin'])->name('admin.dashboard.logout');
         });
+        Route::post('/TukangProposal/{id}/{action}', [TukangController::class, 'store'])->name('admin.approve.proposaltukang');
+        Route::post('/ServiceTypeProposal/{id}/{action}', [ServiceTypeController::class, 'store'])->name('admin.approve.proposalservicetype');
     });
 });
 
