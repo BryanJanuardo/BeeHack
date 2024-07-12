@@ -22,26 +22,57 @@
 <body>
 
     <div class="h-screen w-full flex justify-center items-center bg-[#F0F7F4]">
-        <form class="w-96 bg-[#32292F] p-10">
+        <form method="POST" action="{{ route('registertukang') }}" enctype="multipart/form-data" class="w-96 bg-[#32292F] p-10">
+            @csrf
             <h2 class="text-center text-3xl text-[#99E1D9] font-bold">Register Worker</h2>
             <div class="">
-                <input placeholder="Full Name" type="text" class="w-full mt-4 p-3" required />
-                <input placeholder="Age" type="number" class="w-full mt-4 p-3" required />
+                <div class="form-body">
+                        <input placeholder="Full Name" name="Nama" type="text" class="w-full mt-4 p-3" required />
+                        @error('Nama')
+                            <span class="text-center text-red-500">{{ $message }}</span>
+                        @enderror
 
-                <div class="w-full py-4 text-[#F0F7F4]">
-                    <p class="mb-2 text-lg">Gender</p>
-                    <input type="radio" name="gender" value="male" id="male">
-                    <label for="male" class="">Male</label>
+                        <input placeholder="Age" name="Umur" type="number" class="w-full mt-4 p-3" required />
+                        @error('Umur')
+                            <span class="text-center text-red-500">{{ $message }}</span>
+                        @enderror
 
-                    <input type="radio" name="gender" value="female" id="female">
-                    <label for="female" class="">Female</label>
-                </div>
-                <input placeholder="Phone Number" type="text" class="w-full p-3" required />
-                <input placeholder="Location" type="text" class="w-full mt-4 p-3" required />
-                <textarea placeholder="Description" class="w-full mt-4 p-3" required></textarea>
+                        <div class="w-full py-4 text-[#F0F7F4]">
+                            <p class="mb-2 text-lg">Gender</p>
+                            <input type="radio" name="Gender" value="Male" id="male">
+                            <label for="male" class="">Male</label>
+
+                            <input type="radio" name="Gender" value="Female" id="female">
+                            <label for="female" class="">Female</label>
+                        </div>
+                        @error('Gender')
+                            <span class="text-center text-red-500">{{ $message }}</span>
+                        @enderror
+
+                        <input placeholder="Email" name="Email" type="text" class="w-full p-3" required />
+                        @error('Email')
+                            <span class="text-center text-red-500">{{ $message }}</span>
+                        @enderror
+
+                        <input placeholder="Phone Number" name="NomorTelepon" type="text" class="w-full mt-4 p-3" required />
+                        @error('NomorTelepon')
+                            <span class="text-center text-red-500">{{ $message }}</span>
+                        @enderror
+
+                        <input placeholder="Location" name="Alamat" type="text" class="w-full mt-4 p-3" required />
+                        @error('Alamat')
+                            <span class="text-center text-red-500">{{ $message }}</span>
+                        @enderror
+
+                        <textarea placeholder="Description" name="Deskripsi" class="w-full mt-4 p-3" required></textarea>
+                        @error('Deskripsi')
+                            <span class="text-center text-red-500">{{ $message }}</span>
+                        @enderror
+
+                    </div>
+                    <button type="submit"
+                    class="text-lg font-bold mt-5 my-2 block mx-auto text-center w-44 px-5 py-2 bg-[#99E1D9] rounded rounded-xl">Register</button>
             </div>
-            <button type="submit"
-                class="text-lg font-bold mt-5 my-2 block mx-auto text-center w-44 px-5 py-2 bg-[#99E1D9] rounded rounded-xl">Register</button>
         </form>
     </div>
 

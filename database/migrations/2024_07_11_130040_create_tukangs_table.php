@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('Email')->unique();
             $table->string('Gender');
             $table->string('NomorTelepon');
-            $table->string('Address');
+            $table->string('Alamat');
             $table->string('CV_path')->nullable();
             $table->string('Photo_path')->nullable();
-            $table->text('Description')->nullable();
+            $table->text('Deskripsi')->nullable();
             $table->timestamps();
         });
     }

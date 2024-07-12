@@ -16,10 +16,10 @@ class Tukang extends Model
         'Email',
         'Gender',
         'NomorTelepon',
-        'Address',
+        'Alamat',
         'CV_path',
         'Photo_path',
-        'Description',
+        'Deskripsi',
     ];
 
     public function CustomerService() {

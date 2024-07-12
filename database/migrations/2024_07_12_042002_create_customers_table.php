@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id('CustomerID')->unique();
             $table->string('Nama');
             $table->string('Email')->unique();
-            $table->int('Umur');
+            $table->integer('Umur');
             $table->string('NomorTelepon');
             $table->string('Gender');
             $table->string('Photo_path')->nullable();

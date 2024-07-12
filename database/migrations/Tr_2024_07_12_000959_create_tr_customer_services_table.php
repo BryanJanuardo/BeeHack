@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('tr_customer_service', function (Blueprint $table) {
             $table->id('CustomerServiceID')->unique();
-            $table->foreignId('TukangID')->constrained('tukang')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('ServiceID')->constrained('service_type')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('TukangID')->constrained('tukang', 'TukangID')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('ServiceID')->constrained('service_type', 'ServiceID')->onDelete('cascade')->onUpdate('cascade');
             $table->text('DeskripsiCustomerService');
             $table->integer('Price');
             $table->timestamps();

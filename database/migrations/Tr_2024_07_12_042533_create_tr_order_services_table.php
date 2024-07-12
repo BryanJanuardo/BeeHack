@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('tr_order_service', function (Blueprint $table) {
             $table->id('OrderID')->unique();
-            $table->foreignId('CustomerID')->constrained('customer')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('CustomerServiceID')->constrained('tr_customer_service')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('CustomerID')->constrained('customer', 'CustomerID')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('CustomerServiceID')->constrained('tr_customer_service', 'CustomerServiceID')->onDelete('cascade')->onUpdate('cascade');
             $table->date('StartedDate');
             $table->date('FinishedDate');
             $table->float('Rating Service');
