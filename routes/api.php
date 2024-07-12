@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Service\ServiceTypeService;
 use App\Http\Controllers\Service\TukangController;
 use App\Http\Controllers\Service\TukangService;
+use App\Models\ServiceType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/tukang', [TukangService::class, 'index']);
 Route::post('/tukang/store', [TukangService::class, 'store']);
+
+Route::get('/servicetype', [ServiceTypeService::class, 'GetAllServiceType']);
+Route::post('/servicetype/insert', [ServiceTypeService::class, 'InsertServiceType']);
+Route::put('/servicetype/update/{id}', [ServiceTypeService::class, 'UpdateServiceType']);
+Route::delete('/servicetype/delete/{id}', [ServiceTypeService::class, 'DeleteServiceType']);

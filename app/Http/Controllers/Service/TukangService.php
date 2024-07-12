@@ -33,15 +33,15 @@ class TukangService extends Controller
 
         try {
             $validatedData = $request->validate([
-                'Nama' => 'required|string',
+                'Nama' => 'required|string|min:5|max:30',
                 'Umur' => 'required|integer',
-                'Email' => 'required|string|email',
+                'Email' => 'required|string|email|min:10|max:30',
                 'Gender' => 'required|in:Male,Female',
                 'NomorTelepon' => 'required|string',
                 'Address' => 'required|string',
                 'CV_path' => 'required|string',
                 'Photo_path' => 'required|string',
-                'Description' => 'required|string',
+                'Description' => 'required|string|min:20|max:200',
             ]);
         } catch (ValidationException $e) {
             return response()->json([
@@ -77,6 +77,5 @@ class TukangService extends Controller
      */
     public function destroy(string $id)
     {
-        //
     }
 }
