@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ServiceTypeController;
 use App\Http\Controllers\TrCustomerServiceController;
 use App\Http\Controllers\TukangController;
 use App\Models\TrCustomerService;
@@ -27,5 +28,6 @@ Route::get('/formregistertukang', function() {
 Route::post('/registertukang', [TukangController::class, 'store'])->name('registertukang');
 Route::get('/tukang', [TukangController::class, 'show']);
 Route::get('/tukang/service', [TrCustomerServiceController::class, 'show']);
-// Route:get('/servicedetails',  [])
 
+Route::get('/formregisterservicetype', [ServiceTypeController::class, 'show']);
+Route::post('/registerservicetype', [ServiceTypeController::class, 'store'])->name('registerservicetype');
