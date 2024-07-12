@@ -15,59 +15,11 @@
         body {
             font-family: 'Outfit', sans-serif;
         }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            /* Hide sidebar by default */
-            width: 250px;
-            height: 100%;
-            background-color: #32292F;
-            color: #F0F7F4;
-            transition: left 0.3s ease;
-            z-index: 1000;
-            padding: 1rem;
-        }
-
-        .sidebar.open {
-            left: 0;
-        }
-
-        .toggle-btn {
-            background-color: #99E1D9;
-            color: #32292F;
-            padding: 0.5rem 1rem;
-            border: none;
-            cursor: pointer;
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            z-index: 1001;
-        }
     </style>
 </head>
 
 <body>
-    <!-- Toggle Button -->
-    <button class="toggle-btn" onclick="toggleSidebar()">☰ Filters</button>
-
-    <!-- Sidebar -->
-    <div id="sidebar" class="sidebar">
-        <h2 class="text-2xl font-bold mb-4">Filter Options</h2>
-        <!-- Add your filter options here -->
-        <div>
-            <label for="filter1" class="block mb-2">Filter 1</label>
-            <input type="checkbox" id="filter1" class="mb-4">
-        </div>
-        <div>
-            <label for="filter2" class="block mb-2">Filter 2</label>
-            <input type="checkbox" id="filter2" class="mb-4">
-        </div>
-        <!-- Add more filters as needed -->
-    </div>
-
-    <!-- Navbar -->
+    {{-- Navbar --}}
     <div class="h-24 bg-[#32292F] w-full flex items-center justify-between px-8">
         <div class="text-[#99E1D9] font-extrabold">
             <a href="" class="text-2xl">CariTukang.com</a>
@@ -81,20 +33,20 @@
         </div>
     </div>
 
-    <div class="flex flex-col justify-center items-center w-full min-h-screen">
+    <div href="" class="flex flex-col justify-center items-center w-full min-h-screen">
         <div class="w-5/6 min-h-screen my-10">
             <p class="text-2xl font-bold mb-7">Welcome User - Ucup!</p>
             <div class="w-full h-full justify-around flex flex-wrap">
-                <!-- cards -->
+                {{-- cards --}}
                 <div
-                    class="w-full md:w-5/12 md:h-80 mb-8 bg-[#32292F] py-5 md:p-5 flex md:flex-row flex-col justify-center items-center">
+                    class=" w-full md:w-5/12 md:h-80 mb-8 bg-[#32292F] py-5 md:p-5 flex md:flex-row flex-col justify-center items-center">
                     <div class="w-5/6 md:w-2/6 flex justify-center">
                         <img src="../img/employee.jpeg" class="" />
                     </div>
                     <div class="w-5/6 md:w-4/6 text-[#F0F7F4] pl-5 flex flex-col justify-center">
                         <p class="text-xl font-bold">James Nordan (20)</p>
                         <p class="text-lg font-semibold mb-3">Jakarta Barat | Male</p>
-                        <p class="text-sm">Painting and Decorating</p>
+                        <p class="text-sm ">Painting and Decorating</p>
                         <p class="mb-2">Rating | ⭐8.9</p>
                         <p class="mb-3">Price | 500.000 - 1.000.000 IDR</p>
                         <a href=""
@@ -106,7 +58,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+    {{-- Footer --}}
     <div class="bg-[#32292F] text-[#F0F7F4] flex flex-col md:flex-row p-10 w-full">
         <div class="w-full md:w-2/6 text-center md:text-start">
             <p class="font-bold text-lg">Contact Us</p>
@@ -123,12 +75,6 @@
         </div>
     </div>
 
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            sidebar.classList.toggle('open');
-        }
-    </script>
 </body>
 
 </html>
