@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class TrCustomerService extends Model
 {
     use HasFactory;
-    protected $table = 'TrCustomerService';
+    protected $table = 'tr_customer_service';
     protected $primaryKey = 'CustomerServiceID';
     protected $fillable = [
         'TukangID',

@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\TrCustomerServiceController;
 use App\Http\Controllers\TukangController;
+use App\Models\TrCustomerService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('preDashboardCust');
 });
 
 Route::get('/formregistertukang', function() {
@@ -23,6 +25,7 @@ Route::get('/formregistertukang', function() {
 })->name('formregistertukang');
 
 Route::post('/registertukang', [TukangController::class, 'store'])->name('registertukang');
-
-Route::get('/dashboardcustomer', [TukangController::class, 'show']);
+Route::get('/tukang', [TukangController::class, 'show']);
+Route::get('/tukang/service', [TrCustomerServiceController::class, 'show']);
+// Route:get('/servicedetails',  [])
 
