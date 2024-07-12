@@ -17,7 +17,7 @@ class AuthenticateAdmin
     public function handle(Request $request, Closure $next): Response
     {
         if(!Auth::guard('admin')->check()){
-            return redirect()->route('tukang.login.index');
+            return redirect()->route('admin.login.index');
         }
 
         return $next($request);
